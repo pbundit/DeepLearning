@@ -13,16 +13,16 @@ pip install uv
 ### Setup Project
 
 1. Clone this repository (if applicable):
-
+## ดึงโค้ดมา
    ```bash
    git clone <repository-url>
-   cd DeepLearning
+   cd DeepLearning #เพื่อเข้าไปในโฟลเดอร์นี้
    ```
 
-2. Install dependencies using uv:
+2. Install dependencies using uv: 
 
    ```bash
-   uv sync
+   uv sync 
    ```
 
    This will create a virtual environment and install all dependencies.
@@ -52,9 +52,9 @@ uv run python script.py
 Or activate the environment and run normally:
 
 ```bash
-source .venv/bin/activate
+source .venv/Scripts/activate.bat
 python script.py
-```
+```##.\.venv\Scripts\activate.bat use environment
 
 ## Development
 

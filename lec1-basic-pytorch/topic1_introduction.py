@@ -41,15 +41,15 @@ def check_installation():
         print("Using CPU (GPU optional but recommended for larger models)")
 
 
-def create_first_tensor():
+def create_first_tensor(): # create tensor obj.
     """Create your first tensor - the fundamental building block!"""
     print("\n" + "=" * 60)
     print("Creating Your First Tensor")
     print("=" * 60)
 
     # Create a simple tensor from a list
-    my_first_tensor = torch.tensor([1, 2, 3, 4, 5])
-    print(f"\nTensor: {my_first_tensor}")
+    my_first_tensor = torch.tensor([1, 2, 3, 4, 5]) #my_first_tensor : return tensor obj.
+    print(f"\nTensor: {my_first_tensor}") #what tensor look like
     print(f"Shape: {my_first_tensor.shape}")
     print(f"Data type: {my_first_tensor.dtype}")
     print(f"Device: {my_first_tensor.device}")

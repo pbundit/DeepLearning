@@ -20,11 +20,11 @@ def explore_tensor_dimensions():
 
     # 0D tensor (scalar)
     scalar = torch.tensor(5)
-    print(f"\n0D (scalar): {scalar}, shape: {scalar.shape}")
+    print(f"\n0D (scalar): {scalar}, shape: {scalar.shape}") #print tensor and its shape
 
     # 1D tensor (vector)
     vector = torch.tensor([1, 2, 3, 4, 5])
-    print(f"1D (vector): {vector}, shape: {vector.shape}")
+    print(f"1D (vector): {vector}, shape: {vector.shape}") #1D but have five number in it
 
     # 2D tensor (matrix)
     matrix = torch.tensor([[1, 2], [3, 4]])
@@ -35,30 +35,30 @@ def explore_tensor_dimensions():
     print(f"3D tensor: shape {tensor_3d.shape}")
 
 
-def create_tensors():
+def create_tensors(): #create tensor 1.direct 2. create numpy first then create tensor
     """Different ways to create tensors."""
     print("\n" + "=" * 60)
     print("Creating Tensors")
     print("=" * 60)
 
-    # Zeros
+    # Zeros # blank tensor have only zeros inside but can give it shape
     zeros = torch.zeros(3, 4)
-    print(f"\nZeros (3x4):\n{zeros}")
+    print(f"\nZeros (3x4):\n{zeros},shape: {zeros.shape} ")
 
     # Ones
-    ones = torch.ones(2, 3)
+    ones = torch.ones(2, 3) #tensor  ที่มีแต่เลข1ข้างใน
     print(f"\nOnes (2x3):\n{ones}")
 
-    # Random (uniform distribution)
+    # Random (uniform distribution: ทุกตัวที่สุ่มทุกจุดมีโอกาสเท่ากันตั้งแต่0-1) #tensor  ที่มีแต่เลขrandomข้างใน
     random = torch.rand(2, 3)
     print(f"\nRandom [0, 1):\n{random}")
 
-    # Random (normal distribution)
+    # Random (normal distribution เอา สุ่มมาจาก random distribution)
     normal = torch.randn(2, 3)
     print(f"\nRandom (normal):\n{normal}")
 
     # From list
-    from_list = torch.tensor([1, 2, 3, 4, 5])
+    from_list = torch.tensor([1, 2, 3, 4, 5]) #python list / .tensor = create tensor from list and can use np.array to create tensor as well
     print(f"\nFrom list: {from_list}")
 
     # Filled with specific value
@@ -82,12 +82,12 @@ def tensor_properties():
 
     tensor = torch.rand(3, 4, 5)
 
-    print(f"\nTensor shape: {tensor.shape}")
-    print(f"Tensor size: {tensor.size()}")
-    print(f"Data type: {tensor.dtype}")
-    print(f"Device: {tensor.device}")
-    print(f"Number of elements: {tensor.numel()}")
-    print(f"Number of dimensions: {tensor.ndim}")
+    print(f"\nTensor shape: {tensor.shape}") #properties 
+    print(f"Tensor size: {tensor.size()}") #function
+    print(f"Data type: {tensor.dtype}") 
+    print(f"Device: {tensor.device}") #where tensor store vram on gpu(faster) or ram on cpu
+    print(f"Number of elements: {tensor.numel()}") #มีตัวเลขกี่ค่า มีกี่ element 3*4*5 = 60
+    print(f"Number of dimensions: {tensor.ndim}") #ลึก/กว้าง/สูง
 
 
 def numpy_to_tensor():
@@ -96,12 +96,12 @@ def numpy_to_tensor():
     print("NumPy to Tensor Conversion")
     print("=" * 60)
 
-    # Create NumPy array
+    # Create NumPy array : object
     numpy_array = np.array([1, 2, 3, 4, 5])
     print(f"\nNumPy array: {numpy_array} (type: {type(numpy_array).__name__})")
 
     # Convert to tensor
-    tensor = torch.from_numpy(numpy_array)
+    tensor = torch.from_numpy(numpy_array) # can use .tensor as well
     print(f"PyTorch tensor: {tensor} (type: {type(tensor).__name__})")
 
 
@@ -114,14 +114,15 @@ def data_types():
     # Different types
     float_tensor = torch.tensor([1.0, 2.0, 3.0], dtype=torch.float32)
     int_tensor = torch.tensor([1, 2, 3], dtype=torch.int64)
-    bool_tensor = torch.tensor([True, False, True], dtype=torch.bool)
+    bool_tensor = torch.tensor([True, False, True], dtype=torch.bool)#tensor boolean and can convert type of tensor by copy 
 
     print(f"\nFloat32: {float_tensor} (dtype: {float_tensor.dtype})")
     print(f"Int64: {int_tensor} (dtype: {int_tensor.dtype})")
     print(f"Bool: {bool_tensor} (dtype: {bool_tensor.dtype})")
 
-    # Type conversion
-    converted = int_tensor.float()
+    # Type conversion 
+    converted = int_tensor.float()# int to float  
+    #can convert precission too 
     print(f"\nConverted int to float: {converted} (dtype: {converted.dtype})")
 
     # Other conversion methods
